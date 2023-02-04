@@ -26,7 +26,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/post', {
+      const response = await fetch('https://ai-image-q3pw.onrender.com/api/v1/post', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const Home = () => {
 
       if (response.ok) {
         const result = await response.json();
-        // console.log(result.data)
+        console.log(result.data)
         setAllPosts(result.data.reverse());
       }
     } catch (err) {
